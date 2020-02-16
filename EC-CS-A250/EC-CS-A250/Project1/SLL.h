@@ -27,7 +27,7 @@ public:
 	SLL() : m_first{ nullptr }, m_count{ 0 } {}
 	// Overloaded constructor
 	SLL(Node<T>* first, int count) : m_first{ first }, m_count{ count } {}
-	// Copy
+	// Copy constructor
 	SLL(const SLL& otherList) { *this = otherList; } // using the overloaded assignment operator
 
 	// Overloaded assignment operator
