@@ -22,10 +22,11 @@ ostream& operator<<(ostream& out, const SLL<T>& rhs)
 	}
 	else
 	{
-		Node<T>* current = rhs.m_first;
+		Node<T>* current = rhs.m_first->getNext();
+		out << *(rhs.m_first);
 		while (current != nullptr)
 		{
-			out << current->getData();
+			out << " " << current->getData();
 			current = current->getNext();
 		}
 		return out;
