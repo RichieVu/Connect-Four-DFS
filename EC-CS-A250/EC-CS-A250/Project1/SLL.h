@@ -32,6 +32,7 @@ public:
 	T pop();
 	bool find(const T&) const;
 
+	void destroyList();
 	~SLL();
 
 private:

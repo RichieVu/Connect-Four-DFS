@@ -37,8 +37,39 @@ ostream& operator<<(ostream& out, const SLL<T>& rhs)
 template<typename T>
 SLL<T>& SLL<T>::operator=(const SLL<T>& otherList)
 {
-	m_first = otherList.m_first;
-	m_count = otherList.m_count;
+	if (&otherList != this)
+	{
+		Node<T>* currOther = otherList.m_first;
+		if (currOther != nullptr)
+		{
+			Node<T>* curr = new Node<T>(*currOther);
+			m_first = curr;
+			while (currOther->getNext() != nullptr)
+			{
+				currOther = currOther->getNext();
+				Node<T>* temp = new Node<T>(*currOther);
+				curr->setNext(temp);
+				curr = temp;
+			}
+			curr->setNext(nullptr);
+		}
+		else
+		{
+			m_first = nullptr;
+			m_count = 0;
+		}
+	}
+	else
+	{
+		cerr << "Attempted assignment to itself.";
+	}
+	return *this;
+
+	/*
+	SLL<T> temp(otherList);
+	swap(temp.m_first, m_first);
+	return *this;
+	*/
 }
 
 template<typename T>
@@ -82,12 +113,12 @@ bool SLL<T>::find(const T& key) const
 }
 
 template<typename T>
-SLL<T>::~SLL()
+void SLL<T>::destroyList()
 {
 	if (m_first != nullptr)
 	{
 		Node<T>* temp = m_first;
-		while (m_first != nullptr)
+		while (temp != nullptr)
 		{
 			m_first = m_first->getNext();
 			delete temp;
@@ -95,4 +126,10 @@ SLL<T>::~SLL()
 		}
 		m_count = 0;
 	}
+}
+
+template<typename T>
+SLL<T>::~SLL()
+{
+	destroyList();
 }

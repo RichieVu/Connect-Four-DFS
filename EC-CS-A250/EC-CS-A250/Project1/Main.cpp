@@ -30,8 +30,9 @@ int main()
 
 	cout << list.find(1) << list.find(2) << list.find(3) << list.find(4) << endl;
 
-	//SLL<int> copy = list;
-	//cout << copy << endl;
+	SLL<int> copy;
+	copy = list;
+	cout << copy << endl;
 
 	system("Pause");
 	return 0;
