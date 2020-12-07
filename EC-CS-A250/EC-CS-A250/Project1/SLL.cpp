@@ -81,13 +81,12 @@ SLL<T>::~SLL()
 {
 	if (m_first != nullptr)
 	{
-		Node<T>* current = m_first;
-		Node<T>* temp;
+		Node<T>* temp = m_first;
 		while (m_first != nullptr)
 		{
-			temp = current;
-			current = current->getNext();
+			m_first = m_first->getNext();
 			delete temp;
+			temp = m_first;
 		}
 		m_count = 0;
 	}
