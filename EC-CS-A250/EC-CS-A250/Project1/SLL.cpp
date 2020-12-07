@@ -74,6 +74,7 @@ bool SLL<T>::find(const T& key) const
 			{
 				return true;
 			}
+			current = current->getNext();
 		}
 		return false;
 	}
