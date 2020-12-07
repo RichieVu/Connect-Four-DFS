@@ -34,6 +34,15 @@ int main()
 	copy = list;
 	cout << copy << endl;
 
+	SLL<int> copy2(copy);
+	cout << copy2 << endl;
+
+	SLL<string> stringList;
+	stringList.push("C++");
+	stringList.push("Java");
+	stringList.push("Python");
+	cout << stringList << endl;
+
 	system("Pause");
 	return 0;
 }
