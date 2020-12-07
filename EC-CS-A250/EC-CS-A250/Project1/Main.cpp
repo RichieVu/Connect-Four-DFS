@@ -1,6 +1,6 @@
 ﻿/*
 *	Pirates
-*	Vu, Richie MW ----
+*	Vu, Richie MW 2:20
 *	Carje, Vincent MW 11am
 *
 *	December 6, 2020
