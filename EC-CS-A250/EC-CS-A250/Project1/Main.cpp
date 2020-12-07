@@ -25,6 +25,14 @@ int main()
 	list.push(3);
 	cout << list << endl;
 
+	cout << list.pop() << endl;
+	cout << list << endl;
+
+	cout << list.find(1) << list.find(2) << list.find(3) << endl;
+
+	//SLL<int> copy = list;
+	//cout << copy << endl;
+
 	system("Pause");
 	return 0;
 }

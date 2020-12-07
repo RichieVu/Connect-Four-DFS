@@ -25,7 +25,7 @@ class SLL
 public:
 	SLL() : m_first{ nullptr }, m_count{ 0 } {}
 	SLL(Node<T>* first, int count) : m_first{ first }, m_count{ count } {}
-	SLL(const SLL& otherList) {}
+	SLL(const SLL& otherList) : m_first{ otherList.m_first }, m_count{ otherList.m_count } {}
 
 	SLL& operator=(const SLL& otherList);
 	void push(T);

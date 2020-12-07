@@ -36,7 +36,8 @@ ostream& operator<<(ostream& out, const SLL<T>& rhs)
 template<typename T>
 SLL<T>& SLL<T>::operator=(const SLL<T>& otherList)
 {
-
+	m_first = otherList.m_first;
+	m_count = otherList.m_count;
 }
 
 template<typename T>
@@ -49,10 +50,12 @@ void SLL<T>::push(T e)
 template<typename T>
 T SLL<T>::pop()
 {
-	Node<T>* front = *m_first;
+	Node<T>* front = m_first;
 	m_first = m_first->getNext();
 	--m_count;
-	return front;
+	T data = front->getData();
+	delete front;
+	return data;
 }
 
 template<typename T>
@@ -67,7 +70,7 @@ bool SLL<T>::find(const T& key) const
 		Node<T>* current = m_first;
 		while (current != nullptr)
 		{
-			if (*current == key)
+			if (current->getData() == key)
 			{
 				return true;
 			}
