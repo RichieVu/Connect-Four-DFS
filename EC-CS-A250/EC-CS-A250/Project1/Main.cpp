@@ -33,6 +33,11 @@ int main()
 	SLL<int> copy;
 	copy = list;
 	cout << copy << endl;
+	copy.destroyList();
+
+	SLL<int> copy2(list);
+	copy2.push(6);
+	cout << copy2 << endl;
 
 	system("Pause");
 	return 0;

@@ -29,6 +29,7 @@ public:
 	T getData() const { return m_data; }
 	Node<T>* getNext() const { return m_next; }
 
+	~Node() {}
 private:
 	T m_data;
 	Node<T>* m_next;

@@ -64,12 +64,6 @@ SLL<T>& SLL<T>::operator=(const SLL<T>& otherList)
 		cerr << "Attempted assignment to itself.";
 	}
 	return *this;
-
-	/*
-	SLL<T> temp(otherList);
-	swap(temp.m_first, m_first);
-	return *this;
-	*/
 }
 
 template<typename T>

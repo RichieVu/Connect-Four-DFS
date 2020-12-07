@@ -23,10 +23,14 @@ class SLL
 	friend std::ostream& operator<<(std::ostream& out, const SLL<T>& rhs);
 
 public:
+	// Default constructor
 	SLL() : m_first{ nullptr }, m_count{ 0 } {}
+	// Overloaded constructor
 	SLL(Node<T>* first, int count) : m_first{ first }, m_count{ count } {}
-	SLL(const SLL& otherList) : m_first{ otherList.m_first }, m_count{ otherList.m_count } {}
+	// Copy
+	SLL(const SLL& otherList) { *this = otherList; } // using the overloaded assignment operator
 
+	// Overloaded assignment operator
 	SLL& operator=(const SLL& otherList);
 	void push(T);
 	T pop();
